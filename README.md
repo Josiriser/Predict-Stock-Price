@@ -1,0 +1,1 @@
+用Linear regression 來預測股價
