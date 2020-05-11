@@ -70,9 +70,10 @@ def main():
     YFY_regr = LinearRegression()
     YFY_regr.fit(YFY_X, YFY_Y)
     YFY_predict_y = YFY_regr.predict(np.array([YFY_real_x]))
-    plt.plot(day, YFY_real_y, 'g')
-    plt.plot(day, list(YFY_predict_y[0]), 'r')
-    plt.show()
+    plt.plot(day, YFY_real_y, 'b',label="YFY-Real")
+    plt.plot(day, list(YFY_predict_y[0]), 'g', label="YFY-Predict")
+    plt.legend()
+    # plt.show()
     # 永豐餘 #
     # 台積電 #
     TMSC_all_price = all_price[1]
@@ -80,9 +81,9 @@ def main():
     TMSC_regr = LinearRegression()
     TMSC_regr.fit(TMSC_X, TMSC_Y)
     TMSC_predict_y = TMSC_regr.predict(np.array([TMSC_real_x]))
-    plt.plot(day, TMSC_real_y, 'g')
-    plt.plot(day, list(TMSC_predict_y[0]), 'r')
-    plt.show()
+    plt.plot(day, TMSC_real_y, 'r', label="TSMC-Real")
+    plt.plot(day, list(TMSC_predict_y[0]), 'c', label="TSMC-Predict")
+    # plt.show()
     # 台積電 #
     # 聯發科 #
     MTK_all_price = all_price[2]
@@ -90,8 +91,9 @@ def main():
     MTK_regr = LinearRegression()
     MTK_regr.fit(MTK_X, MTK_Y)
     MTK_predict_y = MTK_regr.predict(np.array([MTK_real_x]))
-    plt.plot(day, MTK_real_y, 'g')
-    plt.plot(day, list(MTK_predict_y[0]), 'r')
+    plt.plot(day, MTK_real_y, 'm', label="MTK-Real")
+    plt.plot(day, list(MTK_predict_y[0]), 'y', label="MTK-Predict")
+    plt.legend()
     plt.show()
     # 聯發科 #
 
